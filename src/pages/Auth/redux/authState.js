@@ -1,7 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit";
 import LocalStorage from "../../../utils/localStorage";
 
-export const catSlice = createSlice({
+export const authSlice = createSlice({
     name: 'auth',
     initialState: {
         payload: new LocalStorage({key: 'auth'}).item,
@@ -40,5 +40,5 @@ export const catSlice = createSlice({
     }
 })
 
-export const {loginRequest, loginSuccess, loginFail , logOutRequest, logOutSuccess, logOutFail} = catSlice.actions;
-export default catSlice.reducer;
+export const {loginRequest, loginSuccess, loginFail , logOutRequest, logOutSuccess, logOutFail} = authSlice.actions;
+export default authSlice.reducer;
