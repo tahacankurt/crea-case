@@ -27,6 +27,10 @@ export default function Header() {
                     Home
                 </Link>
 
+                <Link to="/products" className='tf-link'>
+                    Products
+                </Link>
+
                 {!user ?
                     <Link to="/login" className='tf-link'>
                         Login

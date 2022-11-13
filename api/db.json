@@ -1,19 +1,51 @@
 {
   "users": [
     {
-      "email": "olivier@mail.com",
-      "password": "$2a$10$qCwynRwZCAYOb7tUlyNWxuhC9lmoiAO4woFHwyrLJhUGE/kZShtFO",
-      "id": 1
-    },
-    {
-      "email": "oli2vier@mail.com",
-      "password": "$2a$10$nax5qAfdPh1Br7IG/U7HVOwJd/IygW8EYgbnSTEMozocLB/22yJRG",
-      "id": 2
-    },
-    {
       "email": "user@mail.com",
       "password": "$2a$10$uux8A/IrDBwswc2u/N2mPu2iI5UcJ50fAtq8ZY1c/O6g.qVcjprzG",
       "id": 3
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "Lorem Ipsum",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ",
+      "cdnUrl": "https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-3_large.png?format=webp&v=1530129152",
+      "rate": 4.3,
+      "arrivalDate": "2022-04-22 10:34:23",
+      "price": 239,
+      "currency": "$"
+    },
+    {
+      "id": 2,
+      "title": "Lorem Ipsum 1",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ",
+      "cdnUrl": "https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-5_large.png?format=webp&v=1530129199",
+      "rate": 5,
+      "arrivalDate": "2022-04-22 10:34:23",
+      "price": 159,
+      "currency": "$"
+    },
+    {
+      "id": 3,
+      "title": "Lorem Ipsum 2",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ",
+      "cdnUrl": "https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-6_large.png?format=webp&v=1530129217",
+      "rate": 1.2,
+      "arrivalDate": "2022-04-22 10:34:23",
+      "price": 59,
+      "currency": "$"
+    },
+    {
+      "id": 4,
+      "title": "Lorem Ipsum 3",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ",
+      "cdnUrl": "https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-product-1_large.png?format=webp&v=1530129292",
+      "rate": 3,
+      "arrivalDate": "2022-04-22 10:34:23",
+      "price": 99,
+      "currency": "$"
     }
   ]
 }

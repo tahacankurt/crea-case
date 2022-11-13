@@ -1,4 +1,4 @@
-import {fork, all, takeLatest, call, put, delay} from 'redux-saga/effects'
+import {fork, all, takeEvery, call, put, delay} from 'redux-saga/effects'
 import {loginApiRequest} from "./api";
 import {loginFail, loginSuccess, logOutFail, logOutSuccess} from "./authState";
 
@@ -10,7 +10,6 @@ function* workLoginRequest({payload}) {
         const response = yield  call(loginApiRequest, {email, password});
         yield put(loginSuccess(response))
     } catch (error) {
-        console.log('here');
         yield put(loginFail(error))
     }
 }
@@ -25,11 +24,11 @@ function* workLogoutRequest() {
 }
 
 function* watchLoginRequest() {
-    yield takeLatest('auth/loginRequest', workLoginRequest)
+    yield takeEvery('auth/loginRequest', workLoginRequest)
 }
 
 function* watchLogOutRequest() {
-    yield takeLatest('auth/logOutRequest', workLogoutRequest)
+    yield takeEvery('auth/logOutRequest', workLogoutRequest)
 }
 
 export default function* authRootSaga() {

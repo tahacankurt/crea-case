@@ -6,6 +6,7 @@ import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import {Navigate} from "react-router-dom";
 import {useSelector} from "react-redux";
+import ProductList from "./pages/Product/List";
 
 const ProtectedRoutes = ({children}) => {
     const {user} = useSelector(state => state?.auth.payload);
@@ -24,6 +25,10 @@ const routes = [
             {
                 path: '/',
                 element: <Home/>,
+            },
+            {
+                path: '/products',
+                element: <ProductList/>,
             },
         ]
     },
