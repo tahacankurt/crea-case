@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  client:
+    container_name: crea-case-client-dev
+    image: crea-case-client-dev
+    build:
+      context: .
+      target: development
+    volumes:
+      - ./src:/app/src
+    ports:
+      - "3000:3000"
+  api:
+    container_name: crea-case-api-dev
+    image: crea-case-api-dev
+    build:
+      context: api
+      target: development
+    volumes:
+      - ./src:/app/src
+    ports:
+      - "3080:3080"

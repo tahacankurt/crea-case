@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .base-input {
+        @apply shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full  sm:text-sm rounded-md ;
+    }
+
+    .tf-input{
+        @apply base-input border-gray-300
+    }
+
+    .error\:tf-input{
+        @apply base-input border-red-600
+    }
+
+    .tf-link{
+        @apply text-base font-medium text-gray-500 hover:text-gray-900;
+    }
+
+    .tf-popover-btn{
+        @apply bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500
+    }
+
+    .base-btn{
+        @apply w-full inline-flex justify-center rounded-md shadow-sm px-4 py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-offset-2  sm:text-sm;
+    }
+
+    .primary\:tf-btn{
+        @apply base-btn bg-indigo-600 text-white hover:bg-indigo-700 focus:ring-indigo-500 border border-transparent ;
+    }
+
+    .secondary\:tf-btn{
+        @apply base-btn  border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:ring-indigo-500 ;
+    }
+
+    div[class*="-ValueContainer"]{
+        padding-top: 0.35rem;
+        padding-bottom: 0.35rem;
+    }
+
+}

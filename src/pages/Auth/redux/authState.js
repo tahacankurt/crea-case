@@ -1,26 +1,44 @@
 import {createSlice} from "@reduxjs/toolkit";
+import LocalStorage from "../../../utils/localStorage";
 
-export const authSlice = createSlice({
+export const catSlice = createSlice({
     name: 'auth',
     initialState: {
-        payload: {},
+        payload: new LocalStorage({key: 'auth'}).item,
         error: null,
-        isLoading: null
+        isLoading: false
     },
     reducers: {
-        loginRequest: (state) => {
+        // Login
+        loginRequest: state => {
             state.isLoading = true;
+            state.error = null;
         },
-        loginSuccess: (state, action) => {
+        loginSuccess: (state, {payload}) => {
             state.isLoading = false;
-            state.payload = action.payload
+            state.error = null;
+            state.payload = payload
         },
-        loginFail: (state, action) => {
+        loginFail: (state, {payload}) => {
             state.isLoading = false;
-            state.error = action.error
+            state.error = payload
+        },
+        // Logout
+        logOutRequest: state => {
+            state.isLoading = true;
+            state.error = null;
+        },
+        logOutSuccess(state) {
+            state.isLoading = false;
+            state.error = null;
+            state.payload = {}
+        },
+        logOutFail: (state, {payload}) => {
+            state.isLoading = false;
+            state.error = payload
         }
     }
 })
 
-export const {loginRequest, loginSuccess, loginFail} = authSlice.actions;
-export default authSlice.reducer;
+export const {loginRequest, loginSuccess, loginFail , logOutRequest, logOutSuccess, logOutFail} = catSlice.actions;
+export default catSlice.reducer;

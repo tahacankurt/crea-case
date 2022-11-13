@@ -1,0 +1,14 @@
+{
+  "name": "crea-case-api",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "json-server": "^0.16.3"
+  },
+  "scripts": {
+    "start": "json-server db.json -m ./node_modules/json-server-auth --port=3080"
+  },
+  "devDependencies": {
+    "json-server-auth": "^2.1.0"
+  }
+}
