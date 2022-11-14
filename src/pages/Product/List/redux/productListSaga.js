@@ -9,17 +9,16 @@ function* workGetProductsRequest() {
         const response = yield  call(getProductsApiRequest);
         yield put(getProductsSuccess(response))
     } catch (error) {
-        // TODO: Err messages can show with toast message
+        // TODO: Err messages can show in toast message
         yield put(getProductsFail(error))
     }
 }
 
 function* watchGetProductsRequest() {
-    yield takeEvery('productList/getProductsRequest', workGetProductsRequest)
+    yield takeEvery('product/list/getProductsRequest', workGetProductsRequest)
 }
 
 export default function* productListRootSaga() {
-    // TODO: Terminate loops/async tasks when component destroyed
     yield all([
         fork(watchGetProductsRequest),
     ])

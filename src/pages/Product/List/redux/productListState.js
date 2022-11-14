@@ -1,12 +1,14 @@
 import {createSlice} from "@reduxjs/toolkit";
 
+const INITIAL_STATE = {
+    payload: [],
+    error: null,
+    isLoading: false
+}
+
 export const productListSlice = createSlice({
-    name: 'productList',
-    initialState: {
-        payload: [],
-        error: null,
-        isLoading: false
-    },
+    name: 'product/list',
+    initialState: INITIAL_STATE,
     reducers: {
         getProductsRequest: state => {
             state.isLoading = true;
@@ -21,8 +23,11 @@ export const productListSlice = createSlice({
             state.isLoading = false;
             state.error = payload
         },
+        resetState: (state) => {
+            return INITIAL_STATE
+        }
     }
 })
 
-export const {getProductsRequest, getProductsSuccess, getProductsFail} = productListSlice.actions;
+export const {getProductsRequest, getProductsSuccess, getProductsFail, resetState} = productListSlice.actions;
 export default productListSlice.reducer;

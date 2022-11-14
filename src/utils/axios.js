@@ -1,7 +1,8 @@
 import LocalStorage from "./localStorage";
 import axios from "axios";
 import {API_URL} from "../constants/api";
-import {useState} from "react";
+import {logOutRequest} from "../pages/Auth/redux/authState";
+import {store} from "../store";
 
 const jwtInterceptor = (instance) => {
     const localStorage = new LocalStorage({key: 'auth'});
@@ -16,9 +17,10 @@ const jwtInterceptor = (instance) => {
         (response) => response,
         async (error) => {
             const config = error?.config;
+
             if (error?.response?.status === 401) {
-                // TODO: Refactor
-                window.location.replace('/login')
+                // TODO: There is no refresh token option on fake json auth server so when token expired user will signOut
+                store.dispatch(logOutRequest());
                 return axios(config);
             }
             return Promise.reject(error);

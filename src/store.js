@@ -1,39 +1,22 @@
 import createSagaMiddleware from 'redux-saga'
-import {configureStore} from "@reduxjs/toolkit";
-import {all, fork} from 'redux-saga/effects';
 
+import {configureStore} from "@reduxjs/toolkit";
 import LocalStorage from "./utils/localStorage";
 
-// Reducers could combine in another file
-import authRootSaga from "./pages/Auth/redux/authSaga";
-import authReducer from './pages/Auth/redux/authState';
+import rootReducer from "./redux/reducer";
+import rootSaga from "./redux/saga";
 
-import productListRootSaga from "./pages/Product/List/redux/productListSaga";
-import productListReducer from "./pages/Product/List/redux/productListState";
-
-const lStorega = new LocalStorage({key: 'auth'});
-
+const lStorage = new LocalStorage({key: 'auth'});
 const sagaMiddleware = createSagaMiddleware()
 
 export const store = configureStore({
-    reducer: {
-        auth: authReducer,
-        productList: productListReducer,
-    },
+    reducer: rootReducer,
     middleware: [sagaMiddleware],
-    persistedState: lStorega.item
+    persistedState: lStorage.item
 })
 
 // Pair redux auth state with localstorage
-store.subscribe(() => lStorega.item = store.getState().auth.payload);
-
-function* rootSaga() {
-    yield all([
-        fork(authRootSaga),
-        fork(productListRootSaga),
-
-    ]);
-}
+store.subscribe(() => lStorage.item = store.getState().auth.payload);
 
 sagaMiddleware.run(rootSaga);
 
