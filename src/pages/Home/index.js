@@ -1,10 +1,9 @@
-import React from "react";
-import Layout from "../Layout";
+import React from 'react';
 
-const Home = () => {
-    return (
-        <h1 className={'mt-10 text-xl text-center'}>Home Page</h1>
-    )
+function Home() {
+  return (
+    <h1 className="mt-10 text-xl text-center">Home Page</h1>
+  );
 }
 
 export default Home;

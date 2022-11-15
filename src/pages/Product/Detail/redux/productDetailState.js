@@ -3,14 +3,14 @@ import {createSlice} from "@reduxjs/toolkit";
 const COMMENT_INITIAL_STATE = {
     payload: [],
     error: null,
-    isLoading: false
+    isLoading: true
 }
 
 const INITIAL_STATE = {
     payload: {},
     error: null,
     comment: COMMENT_INITIAL_STATE,
-    isLoading: false
+    isLoading: true
 }
 
 export const productDetailSlice = createSlice({

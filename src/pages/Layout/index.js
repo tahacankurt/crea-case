@@ -1,15 +1,16 @@
-import Header from "./Header";
-import {Outlet} from "react-router-dom";
+import { Outlet } from 'react-router-dom';
+import React from 'react';
+import Header from './Header';
 
-const Layout = () => {
-    return (
-        <>
-            <Header/>
-            <div className="container mx-auto px-4">
-                <Outlet />
-            </div>
-        </>
-    );
+function Layout() {
+  return (
+    <div>
+      <Header />
+      <div className="container mx-auto px-4">
+        <Outlet />
+      </div>
+    </div>
+  );
 }
 
 export default Layout;
