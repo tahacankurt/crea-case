@@ -1,8 +1,8 @@
 import {
   fork, all, takeEvery, call, put, delay,
 } from 'redux-saga/effects';
-// eslint-disable-next-line import/no-cycle
-import { getProductsApiRequest } from './api';
+
+import getProductsApiRequest from './api';
 import { getProductsFail, getProductsSuccess } from './productListState';
 
 function* workGetProductsRequest() {

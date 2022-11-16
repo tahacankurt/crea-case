@@ -1,12 +1,15 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import React, { memo, useState } from 'react';
 import { getCommentsRequest } from '../redux/productDetailState';
-import CommentWrapper from './Comment';
+import TechnicalSpecification from './TechnicalSpecification';
+import CommentForm from './Comment/CommentForm';
+import CommentList from './Comment/CommentList';
 
-// eslint-disable-next-line react/prop-types
 function Tabs({ productId }) {
   const dispatch = useDispatch();
   const [activeTab, setActiveTab] = useState('TECHNICAL_SPECIFICATIONS');
+  const comments = useSelector((state) => state.product.detail.comment.payload);
+
   return (
     <div>
       <div className="grid grid-cols-2 gap-0 my-8 text-white ">
@@ -18,7 +21,7 @@ function Tabs({ productId }) {
         />
 
         <TabNav
-          title="Comments"
+          title={`Comments (${comments.length})`}
           id="COMMENTS"
           activeTab={activeTab}
           onClick={() => dispatch(getCommentsRequest({ productId }))}
@@ -28,10 +31,11 @@ function Tabs({ productId }) {
       {/* Tab content */}
       <div>
         <TabItem id="TECHNICAL_SPECIFICATIONS" activeTab={activeTab}>
-          <h1>Technical Specifications</h1>
+          <TechnicalSpecification />
         </TabItem>
         <TabItem id="COMMENTS" activeTab={activeTab}>
-          <CommentWrapper productId={productId} />
+          <CommentForm productId={productId} />
+          <CommentList productId={productId} />
         </TabItem>
       </div>
     </div>
@@ -39,7 +43,6 @@ function Tabs({ productId }) {
 }
 
 function TabNav({
-  // eslint-disable-next-line react/prop-types
   id, title, activeTab, setActiveTab, onClick,
 }) {
   const handleClick = () => {
@@ -61,7 +64,6 @@ function TabNav({
   );
 }
 
-// eslint-disable-next-line react/prop-types
 function TabItem({ id, activeTab, children }) {
   return activeTab === id ? <div className="TabContent">{children}</div> : null;
 }

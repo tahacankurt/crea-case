@@ -1,6 +1,12 @@
 # Crea Front-end Assignment
 
 This project bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+### Used Libs
+- [React Redux ](https://react-redux.js.org/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Redux Saga](https://redux-saga.js.org/)
+
 ## Installation
 
 ###With Docker
@@ -38,3 +44,11 @@ Client Url
 ```bash
  npm test
 ```
+
+### FUTURE TODOS:
+- [ ] Tests
+- [ ] Eslint fixes
+- [ ] Pre-commit script hook for linter & tests
+- [ ] Real Backend Instead Of Fake Json Server
+- [ ] Refresh Auth Token Endpoint
+

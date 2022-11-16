@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-cycle
 import axios from '../../../utils/axios';
 
 const loginApiRequest = ({ email, password }) => axios({

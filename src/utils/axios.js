@@ -2,7 +2,7 @@ import axios from 'axios';
 import LocalStorage from './localStorage';
 import API_URL from '../constants/api';
 import { logOutRequest } from '../pages/Auth/redux/authState';
-// eslint-disable-next-line import/no-cycle
+
 import { store } from '../store';
 
 const jwtInterceptor = (instance) => {
