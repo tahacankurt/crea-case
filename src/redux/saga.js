@@ -1,4 +1,3 @@
-/* eslint-disable import/no-cycle */
 import { fork, all } from 'redux-saga/effects';
 
 import authRootSaga from '../pages/Auth/redux/authSaga';
