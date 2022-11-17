@@ -10,17 +10,16 @@ function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const isAuthWaiting = useSelector((state) => state?.auth.isLoading);
+  const authError = useSelector((state) => state?.auth.error);
+  const auth = useSelector((state) => state?.auth.payload);
+
   function submit(formData) {
-    dispatch(loginRequest(formData));
+    dispatch(loginRequest({ formData, navigate }));
   }
 
   // formik will much more scalable and better option instead of custom hook.
   const { errors, handleChange, handleSubmit } = useForm(submit, loginFormRules);
-
-  const isAuthWaiting = useSelector((state) => state?.auth.isLoading);
-  const authError = useSelector((state) => state?.auth.error);
-
-  const auth = useSelector((state) => state?.auth.payload);
 
   useEffect(() => {
     if (auth.user) navigate('/');
@@ -35,7 +34,7 @@ function Login() {
 
           <div className="mt-4">
             {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-            <label className="block text-sm font-medium text-gray-700">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
               Email
             </label>
 

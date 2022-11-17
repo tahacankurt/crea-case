@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import React, { useState } from 'react';
 import StarRater from '../StarRater';
 import { createCommentRequest } from '../../redux/productDetailState';
-import { calculateAverageRate } from '../../utils';
 
 export default function CommentForm({ productId }) {
   const dispatch = useDispatch();

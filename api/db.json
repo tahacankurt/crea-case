@@ -49,6 +49,26 @@
     }
   ],
   "comments": [
-
+    {
+      "body": "test",
+      "rate": 3,
+      "date": 1668558283185,
+      "productId": "1",
+      "id": 1
+    },
+    {
+      "body": "knjnj",
+      "rate": 4,
+      "date": 1668558294799,
+      "productId": "1",
+      "id": 2
+    },
+    {
+      "body": "tsest",
+      "rate": 3,
+      "date": 1668644140982,
+      "productId": "3",
+      "id": 3
+    }
   ]
 }

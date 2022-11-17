@@ -2,13 +2,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 import LocalStorage from '../../../utils/localStorage';
 
+export const INITIAL_STATE = {
+  payload: new LocalStorage({ key: 'auth' }).item ?? {},
+  error: null,
+  isLoading: false,
+};
+
 export const authSlice = createSlice({
   name: 'auth',
-  initialState: {
-    payload: new LocalStorage({ key: 'auth' }).item ?? {},
-    error: null,
-    isLoading: false,
-  },
+  initialState: INITIAL_STATE,
   reducers: {
     // Login
     loginRequest: (state) => {

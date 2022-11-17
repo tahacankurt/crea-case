@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "json-server": "^0.16.3"
+    "json-server": "^0.16.3",
+    "react-router-redux": "^4.0.8"
   },
   "scripts": {
     "start": "json-server db.json -m ./node_modules/json-server-auth --port=3080"

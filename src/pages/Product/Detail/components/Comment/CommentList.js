@@ -34,7 +34,7 @@ export default function CommentList() {
             </div>
             <hr />
 
-            {comments.map((comment) => (<CommentItem comment={comment} />))}
+            {comments.map((comment) => (<CommentItem comment={comment} key={comment.id} />))}
           </ul>
         )}
     </div>

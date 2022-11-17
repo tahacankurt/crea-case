@@ -8,12 +8,15 @@ import {
 } from './authState';
 
 function* workLoginRequest({ payload }) {
-  const { email, password } = payload;
+  const { email, password } = payload.formData;
+  const { navigate } = payload;
+
   try {
     // TODO: Delete delay
     yield delay(500);
     const response = yield call(loginApiRequest, { email, password });
     yield put(loginSuccess(response));
+    yield put(navigate('/'));
   } catch (error) {
     yield put(loginFail(error));
   }

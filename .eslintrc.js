@@ -8,7 +8,17 @@ module.exports = {
     'airbnb',
     'airbnb/hooks',
   ],
-  overrides: [],
+  overrides: [
+    {
+      files: [
+        '**/*.spec.js',
+        '**/*.spec.jsx',
+      ],
+      env: {
+        jest: true,
+      },
+    },
+  ],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',

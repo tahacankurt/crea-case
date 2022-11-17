@@ -9,7 +9,7 @@ This project bootstrapped with [Create React App](https://github.com/facebook/cr
 
 ## Installation
 
-###With Docker
+### With Docker
 
 The project has two docker file one of them for client and other one for api.
 
@@ -27,7 +27,7 @@ Client Url
 'http://localhost:3000'
 ```
 
-###Without Docker
+### Without Docker
 
 #### Client
 ```bash

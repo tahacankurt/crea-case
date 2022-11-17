@@ -3,7 +3,7 @@ import LocalStorage from './localStorage';
 import API_URL from '../constants/api';
 import { logOutRequest } from '../pages/Auth/redux/authState';
 
-import { store } from '../store';
+import store from '../store';
 
 const jwtInterceptor = (instance) => {
   const localStorage = new LocalStorage({ key: 'auth' });
