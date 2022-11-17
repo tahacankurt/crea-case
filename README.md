@@ -42,13 +42,13 @@ Client Url
 ```
 ### Test
 ```bash
- npm test
+ npm run test
 ```
 
 ### FUTURE TODOS:
-- [ ] Tests
-- [ ] Eslint fixes
-- [ ] Pre-commit script hook for linter & tests
+- [x] Tests Minor
+- [x] Eslint fixes
+- [x] Pre-commit script for linter
 - [ ] Real Backend Instead Of Fake Json Server
 - [ ] Refresh Auth Token Endpoint
 
